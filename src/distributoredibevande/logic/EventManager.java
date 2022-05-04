@@ -16,6 +16,8 @@ public class EventManager {
     
     private static EventManager _instance = null;
     private List<EventListener> listeners = new LinkedList<>();
+    private List<TastierinoListener> tastierinoListener = new LinkedList<>();
+    
     
     public static EventManager getInstance() {
         if (_instance == null) {
@@ -32,9 +34,25 @@ public class EventManager {
         this.listeners.add(listener);
     }
     
+    public void addTastierinoListener(TastierinoListener listener){
+        this.tastierinoListener.add(listener);
+    }
+    
     public void changePanel(ChoicePanels panel){
         for (EventListener listener : listeners) {
             listener.changePanel(panel);
+        }
+    }
+    
+    public void buttonSelected(int numero){
+        for (TastierinoListener listener : tastierinoListener) {
+            listener.buttonSelected(numero);
+        }
+    }
+    
+    public void confirmSelected(int numero){
+        for (TastierinoListener listener : tastierinoListener) {
+            listener.confirmSelected(numero);
         }
     }
 }

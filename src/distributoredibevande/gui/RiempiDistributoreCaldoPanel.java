@@ -51,6 +51,14 @@ public class RiempiDistributoreCaldoPanel extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("CAPPUCCINO");
 
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinner4.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
         jTextField1.setBackground(new java.awt.Color(255, 102, 102));
         jTextField1.setColumns(1);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
