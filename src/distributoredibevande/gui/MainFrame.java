@@ -18,6 +18,7 @@ public class MainFrame extends javax.swing.JFrame implements EventListener{
      */
     public MainFrame() {
         initComponents();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/distributoredibevande/gui/icons/distributore48.png")).getImage());
         this.jScrollPane1.setViewportView(ChoicePanels.MAIN_PANEL.getPanel());
         setLocationRelativeTo(null);
         this.setTitle("Distributore");
