@@ -59,6 +59,14 @@ public class RiempiDistributoreFreddoPanel extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("GAZZOSA");
 
+        jSpinnerAcqua.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinnerCola.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinnerAranciata.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
+        jSpinnerGazzosa.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+
         jTextField1.setBackground(new java.awt.Color(102, 255, 255));
         jTextField1.setColumns(1);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -149,7 +157,7 @@ public class RiempiDistributoreFreddoPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

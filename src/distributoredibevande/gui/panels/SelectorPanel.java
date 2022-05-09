@@ -24,6 +24,7 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
      * Creates new form SelectorPanel
      */
     private boolean caldo = true;
+    private boolean error = false;
 
     public void setCaldo(boolean caldo) {
         this.caldo = caldo;
@@ -72,7 +73,7 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
         jPanel1.setBackground(new java.awt.Color(153, 255, 255));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("-");
 
@@ -169,6 +170,7 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
             this.jLabel1.setText("€ " + b.getPrezzo());
             this.jButton2.setEnabled(false);
         } catch (EndedQuantityExeptions ex) {
+            this.error = true;
             this.jLabel1.setText(ex.getMessage());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -190,7 +192,11 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
 
     @Override
     public void buttonSelected(int numero) {
-        if (this.jLabel1.getText().equals("-") || this.jLabel1.getText().startsWith("ERRORE") || this.jLabel1.getText().startsWith("€ ")) {
+        if (error) {
+            this.jLabel1.setText("" + numero);
+            error= false;
+        }
+        else if (this.jLabel1.getText().equals("-") || this.jLabel1.getText().startsWith("ERRORE") || this.jLabel1.getText().startsWith("€ ")) {
             this.jLabel1.setText("" + numero);
         } else {
             this.jLabel1.setText(this.jLabel1.getText() + numero);
