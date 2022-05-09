@@ -10,6 +10,7 @@ import distributoredibevande.Distributore;
 import distributoredibevande.exeptions.EndedQuantityExeptions;
 import distributoredibevande.logic.EventManager;
 import distributoredibevande.logic.TastierinoListener;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,6 +27,16 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
 
     public void setCaldo(boolean caldo) {
         this.caldo = caldo;
+        if (caldo) {
+            this.setBackground(new Color(239, 139, 52));
+            this.JpanelTastierinoContainer.setBackground(new Color(239, 139, 52));
+            this.jPanel3.setBackground(new Color(239, 139, 52));
+            this.jPanel1.setBackground(new Color(203, 100, 10));
+        } else {
+            this.setBackground(new Color(17, 121, 255));
+            this.JpanelTastierinoContainer.setBackground(new Color(17, 121, 255));
+            this.jPanel3.setBackground(new Color(17, 121, 255));
+        }
     }
 
     public boolean isCaldo() {
@@ -55,6 +66,8 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(51, 255, 0));
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 255));
 

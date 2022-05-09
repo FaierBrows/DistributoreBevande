@@ -15,7 +15,8 @@ public class PrelevaBevandeFreddePanel extends javax.swing.JPanel {
      */
     public PrelevaBevandeFreddePanel() {
         initComponents();
-        this.selectorPanel2.setCaldo(false);
+        this.selectorPanel1.setCaldo(false);
+        this.selectorPanel1.repaint();
     }
 
     /**
@@ -32,7 +33,7 @@ public class PrelevaBevandeFreddePanel extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        selectorPanel2 = new distributoredibevande.gui.panels.SelectorPanel();
+        selectorPanel1 = new distributoredibevande.gui.panels.SelectorPanel();
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 255));
 
@@ -101,12 +102,13 @@ public class PrelevaBevandeFreddePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selectorPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(selectorPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(selectorPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(selectorPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -125,6 +127,6 @@ public class PrelevaBevandeFreddePanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private distributoredibevande.gui.panels.SelectorPanel selectorPanel2;
+    private distributoredibevande.gui.panels.SelectorPanel selectorPanel1;
     // End of variables declaration//GEN-END:variables
 }
