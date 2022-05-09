@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package distributoredibevande.gui;
+package distributoredibevande.gui.panels;
 
-import distributoredibevande.logic.EventManager;
+import distributoredibevande.gui.ChoicePanels;
+import distributoredibevande.logic.events.EventManager;
 import javax.swing.JButton;
 
 /**
@@ -37,7 +38,6 @@ public class OpzioniDistributoreFreddoPanel extends javax.swing.JPanel {
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("RIEMPI DISTRIBUTORE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,7 +47,6 @@ public class OpzioniDistributoreFreddoPanel extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("PRELEVA DAL DISTRIBUTORE");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +55,6 @@ public class OpzioniDistributoreFreddoPanel extends javax.swing.JPanel {
         });
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("BACK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +95,7 @@ public class OpzioniDistributoreFreddoPanel extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         EventManager.getInstance().changePanel(ChoicePanels.BUY_COLD_PANEL);
+        ((PrelevaBevandeFreddePanel)ChoicePanels.BUY_COLD_PANEL.getPanel()).registerSelector();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

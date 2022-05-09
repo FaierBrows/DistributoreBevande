@@ -1,6 +1,6 @@
-package distributoredibevande;
+package distributoredibevande.logic.entities;
 
-import distributoredibevande.exeptions.EndedQuantityExeptions;
+import distributoredibevande.logic.exceptions.EndedQuantityExceptions;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -43,9 +43,9 @@ public abstract class Bevanda {
         return id;
     }
     
-    public Bevanda extract() throws EndedQuantityExeptions{
+    public Bevanda extract() throws EndedQuantityExceptions{
         if(this.quantity<0){
-            throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.OUTOFSTOCK, "Il prodotto è finito");
+            throw new EndedQuantityExceptions(EndedQuantityExceptions.Field.OUTOFSTOCK, "Il prodotto è finito");
         }
         this.quantity--;
         return this;

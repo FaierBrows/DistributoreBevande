@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package distributoredibevande.gui;
+package distributoredibevande.gui.panels;
 
-import distributoredibevande.logic.EventManager;
+import distributoredibevande.gui.ChoicePanels;
+import distributoredibevande.logic.events.EventManager;
 
 /**
  *
@@ -36,7 +37,6 @@ public class SceltaDistributorePanel extends javax.swing.JPanel {
 
         SceltaDistributoreBevandeCalde.setBackground(new java.awt.Color(204, 204, 204));
         SceltaDistributoreBevandeCalde.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        SceltaDistributoreBevandeCalde.setForeground(new java.awt.Color(0, 0, 0));
         SceltaDistributoreBevandeCalde.setText("DISTRIBUTORE BEVANDE CALDE");
         SceltaDistributoreBevandeCalde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,7 +46,6 @@ public class SceltaDistributorePanel extends javax.swing.JPanel {
 
         SceltaDistributoreBevandeCalde1.setBackground(new java.awt.Color(204, 204, 204));
         SceltaDistributoreBevandeCalde1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        SceltaDistributoreBevandeCalde1.setForeground(new java.awt.Color(0, 0, 0));
         SceltaDistributoreBevandeCalde1.setText("DISTRIBUTORE BEVANDE FREDDE");
         SceltaDistributoreBevandeCalde1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package distributoredibevande;
+package distributoredibevande.logic.entities;
 
-import distributoredibevande.exeptions.EndedQuantityExeptions;
+import distributoredibevande.logic.exceptions.EndedQuantityExceptions;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,24 +30,24 @@ public class Distributore {
     private Distributore() {
     }
 
-    public BevandaCalda selectBevandaCalda(int id) throws EndedQuantityExeptions {
+    public BevandaCalda selectBevandaCalda(int id) throws EndedQuantityExceptions {
         if (!this.bevandeCaldeMap.containsKey(id)) {
-            throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.NOTFOUND, "Il prodotto non esiste");
+            throw new EndedQuantityExceptions(EndedQuantityExceptions.Field.NOTFOUND, "Il prodotto non esiste");
         }
         BevandaCalda bevanda = this.bevandeCaldeMap.get(id);
         if (bevanda.getQuantity() <= 0) {
-            throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.OUTOFSTOCK, "Il prodotto è finito");
+            throw new EndedQuantityExceptions(EndedQuantityExceptions.Field.OUTOFSTOCK, "Il prodotto è finito");
         }
         return (BevandaCalda) bevanda.extract();
     }
 
-    public BevandaFredda selectBevandaFredda(int id) throws EndedQuantityExeptions {
+    public BevandaFredda selectBevandaFredda(int id) throws EndedQuantityExceptions {
         if (!this.bevandeFreddeMap.containsKey(id)) {
-            throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.NOTFOUND, "Il prodotto non esiste");
+            throw new EndedQuantityExceptions(EndedQuantityExceptions.Field.NOTFOUND, "Il prodotto non esiste");
         }
         BevandaFredda bevanda = this.bevandeFreddeMap.get(id);
         if (bevanda.getQuantity() <= 0) {
-            throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.OUTOFSTOCK, "Il prodotto è finito");
+            throw new EndedQuantityExceptions(EndedQuantityExceptions.Field.OUTOFSTOCK, "Il prodotto è finito");
         }
         return (BevandaFredda) bevanda.extract();
     }
@@ -62,18 +62,17 @@ public class Distributore {
         }
     }
 
-    public void addQuantity(int id, int quantity, boolean caldo) throws EndedQuantityExeptions {
+    public void addQuantity(int id, int quantity, boolean caldo) throws EndedQuantityExceptions {
         if (caldo) {
             if (!this.bevandeCaldeMap.containsKey(id)) {
-                throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.NOTFOUND, "Il prodotto non esiste");
+                throw new EndedQuantityExceptions(EndedQuantityExceptions.Field.NOTFOUND, "Il prodotto non esiste");
             }
             this.bevandeCaldeMap.get(id).setQuantity(quantity);
         } else {
             if (!this.bevandeFreddeMap.containsKey(id)) {
-                throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.NOTFOUND, "Il prodotto non esiste");
+                throw new EndedQuantityExceptions(EndedQuantityExceptions.Field.NOTFOUND, "Il prodotto non esiste");
             }
             this.bevandeFreddeMap.get(id).setQuantity(quantity);
         }
-
     }
 }

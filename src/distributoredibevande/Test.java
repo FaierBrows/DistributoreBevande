@@ -4,8 +4,11 @@
  */
 package distributoredibevande;
 
-import distributoredibevande.Enum.Bcalde;
-import distributoredibevande.Enum.Bfredde;
+import distributoredibevande.logic.entities.Distributore;
+import distributoredibevande.logic.entities.BevandaFredda;
+import distributoredibevande.logic.entities.BevandaCalda;
+import distributoredibevande.logic.enums.Bcalde;
+import distributoredibevande.logic.enums.Bfredde;
 import distributoredibevande.gui.MainFrame;
 import java.util.Scanner;
 

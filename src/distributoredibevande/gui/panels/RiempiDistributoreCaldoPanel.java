@@ -3,11 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 
-package distributoredibevande.gui;
+package distributoredibevande.gui.panels;
 
-import distributoredibevande.Distributore;
-import distributoredibevande.exeptions.EndedQuantityExeptions;
-import distributoredibevande.logic.EventManager;
+import distributoredibevande.gui.ChoicePanels;
+import distributoredibevande.logic.entities.Distributore;
+import distributoredibevande.logic.exceptions.EndedQuantityExceptions;
+import distributoredibevande.logic.events.EventManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -167,7 +168,11 @@ public class RiempiDistributoreCaldoPanel extends javax.swing.JPanel {
             Distributore.getInstance().addQuantity(3, (Integer)jSpinnerCappuccino.getValue(), true);
             Distributore.getInstance().addQuantity(4, (Integer)jSpinnerCioccolata.getValue(), true);
             EventManager.getInstance().changePanel(ChoicePanels.OPTIONS_HOT_PANEL);
-        } catch (EndedQuantityExeptions ex) {
+            JSpinnerCaffe.setValue((Integer)0);
+            jSpinnerLatte.setValue((Integer)0);
+            jSpinnerCappuccino.setValue((Integer)0);
+            jSpinnerCioccolata.setValue((Integer)0);
+        } catch (EndedQuantityExceptions ex) {
             Logger.getLogger(RiempiDistributoreCaldoPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -4,12 +4,12 @@
  */
 package distributoredibevande.gui.panels;
 
-import distributoredibevande.Bevanda;
-import distributoredibevande.BevandaCalda;
-import distributoredibevande.Distributore;
-import distributoredibevande.exeptions.EndedQuantityExeptions;
-import distributoredibevande.logic.EventManager;
-import distributoredibevande.logic.TastierinoListener;
+import distributoredibevande.logic.entities.Bevanda;
+import distributoredibevande.logic.entities.BevandaCalda;
+import distributoredibevande.logic.entities.Distributore;
+import distributoredibevande.logic.exceptions.EndedQuantityExceptions;
+import distributoredibevande.logic.events.EventManager;
+import distributoredibevande.logic.events.TastierinoListener;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,9 +49,16 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
         for (int i = 1; i < 10; i++) {
             this.JpanelTastierinoContainer.add(new TastierinoPanel(i));
         }
-        EventManager.getInstance().addTastierinoListener(this);
+       // EventManager.getInstance().addTastierinoListener(this);
     }
 
+    public void register(){
+        EventManager.getInstance().addTastierinoListener(this);
+    }
+    
+    public void deregister(){
+        EventManager.getInstance().removeTastierinoListener(this);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -169,7 +176,7 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
             }
             this.jLabel1.setText("€ " + b.getPrezzo());
             this.jButton2.setEnabled(false);
-        } catch (EndedQuantityExeptions ex) {
+        } catch (EndedQuantityExceptions ex) {
             this.error = true;
             this.jLabel1.setText(ex.getMessage());
         }
@@ -180,6 +187,9 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
         this.jButton2.setEnabled(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void resetLabel(){
+        this.jLabel1.setText("-");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JpanelTastierinoContainer;

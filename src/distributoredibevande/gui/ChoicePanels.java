@@ -4,6 +4,13 @@
  */
 package distributoredibevande.gui;
 
+import distributoredibevande.gui.panels.RiempiDistributoreFreddoPanel;
+import distributoredibevande.gui.panels.SceltaDistributorePanel;
+import distributoredibevande.gui.panels.PrelevaBevandeFreddePanel;
+import distributoredibevande.gui.panels.RiempiDistributoreCaldoPanel;
+import distributoredibevande.gui.panels.OpzioniDistributoreFreddoPanel;
+import distributoredibevande.gui.panels.PrelevaBevandeCaldePanel;
+import distributoredibevande.gui.panels.OpzioniDistributoreCaldoPanel;
 import javax.swing.JPanel;
 
 /**

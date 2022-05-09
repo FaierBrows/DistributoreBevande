@@ -4,8 +4,8 @@
  */
 package distributoredibevande.gui;
 
-import distributoredibevande.logic.EventListener;
-import distributoredibevande.logic.EventManager;
+import distributoredibevande.logic.events.EventListener;
+import distributoredibevande.logic.events.EventManager;
 
 /**
  *

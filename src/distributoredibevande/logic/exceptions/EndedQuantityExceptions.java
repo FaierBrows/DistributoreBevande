@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package distributoredibevande.exeptions;
+package distributoredibevande.logic.exceptions;
 
 /**
  *
  * @author Studente
  */
-public class EndedQuantityExeptions extends Exception{
+public class EndedQuantityExceptions extends Exception{
     
     public enum Field{
         NOTFOUND,
@@ -18,11 +18,11 @@ public class EndedQuantityExeptions extends Exception{
         OUTOFSTOCK;
     }
     
-    public EndedQuantityExeptions(){
+    public EndedQuantityExceptions(){
         super("Qualcosa è andato storto");
     }
     
-    public EndedQuantityExeptions(Field field, String detail){
+    public EndedQuantityExceptions(Field field, String detail){
         super("<html><div>["+ field.name()+"] problem: "+ detail+ "</div>");
     }
     

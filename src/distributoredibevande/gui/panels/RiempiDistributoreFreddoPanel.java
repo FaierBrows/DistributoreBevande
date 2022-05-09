@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package distributoredibevande.gui;
+package distributoredibevande.gui.panels;
 
-import distributoredibevande.Distributore;
-import distributoredibevande.exeptions.EndedQuantityExeptions;
-import distributoredibevande.logic.EventManager;
+import distributoredibevande.gui.ChoicePanels;
+import distributoredibevande.logic.entities.Distributore;
+import distributoredibevande.logic.exceptions.EndedQuantityExceptions;
+import distributoredibevande.logic.events.EventManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JSpinner;
@@ -114,7 +115,7 @@ public class RiempiDistributoreFreddoPanel extends javax.swing.JPanel {
                         .addComponent(jTextField1)
                         .addContainerGap())))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(146, 146, 146)
                 .addComponent(jButton1)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -174,7 +175,11 @@ public class RiempiDistributoreFreddoPanel extends javax.swing.JPanel {
             Distributore.getInstance().addQuantity(3, (Integer) jSpinnerAranciata.getValue(), true);
             Distributore.getInstance().addQuantity(4, (Integer) jSpinnerGazzosa.getValue(), true);
             EventManager.getInstance().changePanel(ChoicePanels.OPTIONS_COLD_PANEL);
-        } catch (EndedQuantityExeptions ex) {
+            jSpinnerAcqua.setValue((Integer)0);
+            jSpinnerCola.setValue((Integer)0);
+            jSpinnerAranciata.setValue((Integer)0);
+            jSpinnerGazzosa.setValue((Integer)0);
+        } catch (EndedQuantityExceptions ex) {
             Logger.getLogger(RiempiDistributoreCaldoPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

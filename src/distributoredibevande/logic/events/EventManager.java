@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package distributoredibevande.logic;
+package distributoredibevande.logic.events;
 
 import distributoredibevande.gui.ChoicePanels;
 import java.util.LinkedList;
@@ -36,6 +36,10 @@ public class EventManager {
     
     public void addTastierinoListener(TastierinoListener listener){
         this.tastierinoListener.add(listener);
+    }
+    
+    public void removeTastierinoListener(TastierinoListener listener){
+        this.tastierinoListener.remove(listener);
     }
     
     public void changePanel(ChoicePanels panel){
