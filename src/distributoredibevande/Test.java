@@ -17,9 +17,14 @@ public class Test {
 
     public final static void init() {
         Distributore.getInstance().load(
-                new BevandaCalda(Bcalde.CAFFE, 0.40d, 1, 12),
-                new BevandaFredda(Bfredde.ACQUA, 1.0d, 1, 13),
-                new BevandaCalda(Bcalde.CAPPUCCINO, 1.00d, 2, 8));
+                new BevandaCalda(Bcalde.CAFFE, 0.40d, 1, 5),
+                new BevandaCalda(Bcalde.LATTE, 0.60d, 2, 5),
+                new BevandaCalda(Bcalde.CAPPUCCINO, 1.0d, 3, 5),
+                new BevandaCalda(Bcalde.CIOCCOLATA, 1.0d, 4, 5),
+                new BevandaFredda(Bfredde.ACQUA, 0.50d, 1, 5),
+                new BevandaFredda(Bfredde.COLA, 2.50d, 2, 5),
+                new BevandaFredda(Bfredde.ARANCIATA, 2.50d, 3, 5),
+                new BevandaFredda(Bfredde.GAZZOSA, 2.0d, 4, 5));
     }
 
     public static void main(String[] args) {

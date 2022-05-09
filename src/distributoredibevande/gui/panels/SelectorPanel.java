@@ -4,6 +4,7 @@
  */
 package distributoredibevande.gui.panels;
 
+import distributoredibevande.Bevanda;
 import distributoredibevande.BevandaCalda;
 import distributoredibevande.Distributore;
 import distributoredibevande.exeptions.EndedQuantityExeptions;
@@ -21,6 +22,16 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
     /**
      * Creates new form SelectorPanel
      */
+    private boolean caldo = true;
+
+    public void setCaldo(boolean caldo) {
+        this.caldo = caldo;
+    }
+
+    public boolean isCaldo() {
+        return caldo;
+    }
+
     public SelectorPanel() {
         initComponents();
         for (int i = 1; i < 10; i++) {
@@ -45,8 +56,9 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("-");
@@ -62,10 +74,10 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
         );
 
-        JpanelTastierinoContainer.setBackground(new java.awt.Color(51, 102, 0));
+        JpanelTastierinoContainer.setBackground(new java.awt.Color(204, 204, 204));
         JpanelTastierinoContainer.setLayout(new java.awt.GridLayout(3, 3, 10, 10));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
         jButton1.setText("ANNULLA");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -121,30 +133,36 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JpanelTastierinoContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JpanelTastierinoContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(this.jLabel1.getText().equals("-")){
+        if (this.jLabel1.getText().equals("-")) {
             this.jLabel1.setText("ERRORE: Nessuna selezione");
             return;
         }
         try {
             int parseInt = Integer.parseInt(this.jLabel1.getText());
-//        EventManager.getInstance().confirmSelected(parseInt);
-            BevandaCalda bc = Distributore.getInstance().selectBevandaCalda(parseInt);
-            this.jLabel1.setText("€ "+ bc.getPrezzo());
+            Bevanda b = null;
+            if (caldo) {
+                b = Distributore.getInstance().selectBevandaCalda(parseInt);
+            } else {
+                b = Distributore.getInstance().selectBevandaFredda(parseInt);
+            }
+            this.jLabel1.setText("€ " + b.getPrezzo());
+            this.jButton2.setEnabled(false);
         } catch (EndedQuantityExeptions ex) {
-            this.jLabel1.setText("ERRORE: Terminate");
+            this.jLabel1.setText(ex.getMessage());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.jLabel1.setText("-");
+        this.jButton2.setEnabled(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -164,6 +182,7 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
         } else {
             this.jLabel1.setText(this.jLabel1.getText() + numero);
         }
+        this.jButton2.setEnabled(true);
     }
 
     @Override

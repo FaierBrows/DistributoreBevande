@@ -14,6 +14,7 @@ public class EndedQuantityExeptions extends Exception{
     
     public enum Field{
         NOTFOUND,
+        NOTEXISTING,
         OUTOFSTOCK;
     }
     
@@ -22,7 +23,7 @@ public class EndedQuantityExeptions extends Exception{
     }
     
     public EndedQuantityExeptions(Field field, String detail){
-        super("["+ field.name()+"] problem: "+ detail);
+        super("<html><div>["+ field.name()+"] problem: "+ detail+ "</div>");
     }
     
 }

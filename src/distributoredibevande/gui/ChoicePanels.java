@@ -18,8 +18,7 @@ public enum ChoicePanels {
     LOAD_HOT_PANEL(new RiempiDistributoreCaldoPanel()),
     LOAD_COLD_PANEL(new RiempiDistributoreFreddoPanel()),
     BUY_HOT_PANEL(new PrelevaBevandeCaldePanel()),
-    BUY_COLD_PANEL(new PrelevaBevandeFreddePanel()),
-    SUGAR_PANEL(new ZuccheroPanel());
+    BUY_COLD_PANEL(new PrelevaBevandeFreddePanel());
     
     private JPanel panel;
 
