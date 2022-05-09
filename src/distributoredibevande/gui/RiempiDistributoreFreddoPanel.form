@@ -44,22 +44,22 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel4" linkSize="5" min="-2" pref="109" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jSpinner4" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jSpinnerGazzosa" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel3" linkSize="5" min="-2" pref="113" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jSpinner3" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jSpinnerAranciata" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel1" linkSize="5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jSpinner1" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jSpinnerAcqua" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel2" linkSize="5" min="-2" pref="110" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jSpinner2" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jSpinnerCola" linkSize="7" min="-2" pref="111" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
@@ -85,22 +85,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jSpinner1" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerAcqua" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" linkSize="6" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jSpinner2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerCola" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" linkSize="6" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jSpinner3" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerAranciata" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" linkSize="6" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jSpinner4" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerGazzosa" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -113,34 +113,34 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="CAFFE"/>
+            <Property name="text" type="java.lang.String" value="ACQUA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="CIOCCOLATO"/>
+            <Property name="text" type="java.lang.String" value="COLA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="LATTE"/>
+            <Property name="text" type="java.lang.String" value="ARANCIATA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="CAPPUCCINO"/>
+            <Property name="text" type="java.lang.String" value="GAZZOSA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner1">
+        <Component class="javax.swing.JSpinner" name="jSpinnerAcqua">
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner2">
+        <Component class="javax.swing.JSpinner" name="jSpinnerCola">
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner3">
+        <Component class="javax.swing.JSpinner" name="jSpinnerAranciata">
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner4">
+        <Component class="javax.swing.JSpinner" name="jSpinnerGazzosa">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField1">
           <Properties>

@@ -60,6 +60,20 @@ public class Distributore {
                 this.bevandeFreddeMap.put(bevanda.getId(), (BevandaFredda) bevanda);
             }
         }
+    }
+
+    public void addQuantity(int id, int quantity, boolean caldo) throws EndedQuantityExeptions {
+        if (caldo) {
+            if (!this.bevandeCaldeMap.containsKey(id)) {
+                throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.NOTFOUND, "Il prodotto non esiste");
+            }
+            this.bevandeCaldeMap.get(id).setQuantity(quantity);
+        } else {
+            if (!this.bevandeFreddeMap.containsKey(id)) {
+                throw new EndedQuantityExeptions(EndedQuantityExeptions.Field.NOTFOUND, "Il prodotto non esiste");
+            }
+            this.bevandeFreddeMap.get(id).setQuantity(quantity);
+        }
 
     }
 }

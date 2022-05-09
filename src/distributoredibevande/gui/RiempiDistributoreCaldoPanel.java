@@ -5,6 +5,12 @@
 
 package distributoredibevande.gui;
 
+import distributoredibevande.Distributore;
+import distributoredibevande.exeptions.EndedQuantityExeptions;
+import distributoredibevande.logic.EventManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author loren
@@ -30,10 +36,10 @@ public class RiempiDistributoreCaldoPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jSpinner2 = new javax.swing.JSpinner();
-        jSpinner3 = new javax.swing.JSpinner();
-        jSpinner4 = new javax.swing.JSpinner();
+        JSpinnerCaffe = new javax.swing.JSpinner();
+        jSpinnerLatte = new javax.swing.JSpinner();
+        jSpinnerCappuccino = new javax.swing.JSpinner();
+        jSpinnerCioccolata = new javax.swing.JSpinner();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
@@ -43,21 +49,21 @@ public class RiempiDistributoreCaldoPanel extends javax.swing.JPanel {
         jLabel1.setText("CAFFE");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("CIOCCOLATO");
+        jLabel2.setText("LATTE");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("LATTE");
+        jLabel3.setText("CAPPUCCINO");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("CAPPUCCINO");
+        jLabel4.setText("CIOCCOLATA");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+        JSpinnerCaffe.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
 
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+        jSpinnerLatte.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
 
-        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+        jSpinnerCappuccino.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
 
-        jSpinner4.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+        jSpinnerCioccolata.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
 
         jTextField1.setBackground(new java.awt.Color(255, 102, 102));
         jTextField1.setColumns(1);
@@ -88,19 +94,19 @@ public class RiempiDistributoreCaldoPanel extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(64, 64, 64)
-                                .addComponent(jSpinner4))
+                                .addComponent(jSpinnerCioccolata))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(64, 64, 64)
-                                .addComponent(jSpinner3))
+                                .addComponent(jSpinnerCappuccino))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(64, 64, 64)
-                                .addComponent(jSpinner1))
+                                .addComponent(JSpinnerCaffe))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(64, 64, 64)
-                                .addComponent(jSpinner2)))
+                                .addComponent(jSpinnerLatte)))
                         .addGap(62, 62, 62))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextField1)
@@ -121,19 +127,19 @@ public class RiempiDistributoreCaldoPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jSpinner1))
+                    .addComponent(JSpinnerCaffe))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner2))
+                    .addComponent(jSpinnerLatte))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner3))
+                    .addComponent(jSpinnerCappuccino))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner4))
+                    .addComponent(jSpinnerCioccolata))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addGap(24, 24, 24))
@@ -158,21 +164,29 @@ public class RiempiDistributoreCaldoPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            Distributore.getInstance().addQuantity(1, (Integer)JSpinnerCaffe.getValue(), true);
+            Distributore.getInstance().addQuantity(2, (Integer)jSpinnerLatte.getValue(), true);
+            Distributore.getInstance().addQuantity(3, (Integer)jSpinnerCappuccino.getValue(), true);
+            Distributore.getInstance().addQuantity(4, (Integer)jSpinnerCioccolata.getValue(), true);
+            EventManager.getInstance().changePanel(ChoicePanels.OPTIONS_HOT_PANEL);
+        } catch (EndedQuantityExeptions ex) {
+            Logger.getLogger(RiempiDistributoreCaldoPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSpinner JSpinnerCaffe;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
-    private javax.swing.JSpinner jSpinner4;
+    private javax.swing.JSpinner jSpinnerCappuccino;
+    private javax.swing.JSpinner jSpinnerCioccolata;
+    private javax.swing.JSpinner jSpinnerLatte;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
