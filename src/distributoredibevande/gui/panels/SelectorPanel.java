@@ -164,6 +164,7 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (this.jLabel1.getText().equals("-")) {
             this.jLabel1.setText("ERRORE: Nessuna selezione");
+            this.jButton2.setEnabled(false);
             return;
         }
         try {
@@ -179,6 +180,7 @@ public class SelectorPanel extends javax.swing.JPanel implements TastierinoListe
         } catch (EndedQuantityExceptions ex) {
             this.error = true;
             this.jLabel1.setText(ex.getMessage());
+            this.jButton2.setEnabled(false);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
